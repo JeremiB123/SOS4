@@ -36,10 +36,10 @@ session_start();
 				}
 			}
 			
-			echo "wrong username or password!";
+			echo "Verkeerde gebruikersnaam of wachtwoord.";
 		}else
 		{
-			echo "wrong username or password!";
+			echo "Verkeerde gebruikersnaam of wachtwoord.";
 		}
 	}
 
@@ -49,8 +49,9 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Log in</title>
 </head>
+<img src="NHL+Stenden+Made+by+Students.png"> 
 <body>
 
 	<style type="text/css">
@@ -75,7 +76,7 @@ session_start();
 
 	#box{
 
-		background-color: grey;
+		background-color: #17A2B8;
 		margin: auto;
 		width: 300px;
 		padding: 20px;
@@ -93,7 +94,7 @@ session_start();
 
 			<input id="button" type="submit" value="Login"><br><br>
 
-			<a href="signup.php">Click to Signup</a><br><br>
+			<a href="signup.php">Klik om in te loggen.</a><br><br>
 		</form>
 	</div>
 </body>

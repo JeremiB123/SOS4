@@ -43,15 +43,16 @@ $sql = "SELECT * FROM users where user_id='$id';";
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/FLEX.css" rel="stylesheet">
 </head>
 
 <body>
+
     <!-- Navbar Start -->
     <div class="container-fluid bg-light position-relative shadow">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
             <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
-                <span class="text-primary">Onderzoekend vermogen </span>
+               
+            <span class="text-primary">Onderzoekend vermogen </span>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -61,8 +62,20 @@ $sql = "SELECT * FROM users where user_id='$id';";
                     <div class="navbar-nav font-weight-bold mx-auto py-0">
                         <a href="index.php" class="nav-item nav-link active">Hoofdpagina</a> 
                         <a href="progress.php" class="nav-item nav-link ">Progress</a>
-                        <a href="progress.php" class="nav-item nav-link ">DOE DE TEST</a>
-                        <i class="fa mt-3"><h5>welkom</h5><h5>
+                       <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                              Onderzoekend Voortgang
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="survey_name.php">Onderzoekende houding</a>
+                              <a class="dropdown-item" href="vakleer.php">Onderzoek in het vak(leer)gebied</a>
+                              <a class="dropdown-item" href="fenomeen.php">Fenomeen Onderzoek</a>
+                              <a class="dropdown-item" href="vaardigheden.php">Onderzoeksvaardigheden</a>
+                              <a class="dropdown-item" href="praktijk.php">Toepassen in praktijk</a>
+                              <a class="dropdown-item" href="handelen.php">Onderzoekend handelen</a>
+                            </div>
+                          </li>
+                        <i class="fa "><h5>welkom</h5><h5>
                             <?php 
                             $id = $_SESSION['user_id'];
                             $sql = "SELECT * FROM users where user_id='$id';";
@@ -76,14 +89,7 @@ $sql = "SELECT * FROM users where user_id='$id';";
                                 } ?>
                                 
                             </h5></i>
-                            <li class="nav-item dropdown">
-                            <a class="fa fa-user nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                              
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="logout.php">logout</a>
-                            </div>
-                          </li>
+ 
                 </div>
             </div>
         </nav>
@@ -95,10 +101,12 @@ $sql = "SELECT * FROM users where user_id='$id';";
     <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
         <div class="row align-items-center px-3">
             <div class="col-lg-6 text-center text-lg-left">
-                <h3 class="text-white">Onderzoekend vermogen</h3>
-                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h3 class="text-white">BEKWAAMHEID ONDERZOEKEND VERMOGEN</h3>
+                <p class="text-white">Bekwaamheid onderzoekend vermogen wil zeggen dat de leraar de bekwaamheid toont om praktijkonderzoek te doen én te gebruiken ter verbetering van de eigen beroepspraktijk door de integratie van een onderzoekende houding, kennis over het fenomeen onderzoek, onderzoekend handelen, onderzoeksvaardigheden, het kunnen toepassen van onderzoeksresultaten in de praktijk en kennis over onderzoek in het vakgebied.
+De zes aspecten van onderzoekend vermogen zijn in de praktijk onlosmakelijk met elkaar verbonden en verweven. Om het onderzoekend vermogen te trainen en de ontwikkeling in kaart te brengen is het echter functioneel om de verschillende aspecten afzonderlijk te benaderen. 
 
-
+Op deze website kun je je voortgang in Onderzoekend Vermogen vastleggen aan de hand van 6 aspecten, en onderbouwing toevoegen om in te zetten bij bijvoorbeeld assessments.
+</p>
             </div>
                   <p></p>
                   <p></p>
