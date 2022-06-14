@@ -5,8 +5,12 @@ include("functions.php");
 
 $user_data = check_login($con);
 
+
+       
+    
+
 ?>
-?>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -70,7 +74,28 @@ $user_data = check_login($con);
                               <a class="dropdown-item" href="handelen.php">Onderzoekend handelen</a>
                             </div>
                           </li>
-                        <i class="fa fa-user"></i>
+                          <i class="fa mt-3"><h5>welkom</h5><h5>
+                            <?php 
+                            $id = $_SESSION['user_id'];
+                            $sql = "SELECT * FROM users where user_id='$id';";
+                                $result = mysqli_query($con, $sql);
+                                $resultaatCheck = mysqli_num_rows($result);
+
+                                if ($resultaatCheck > 0){
+                                    while($row = mysqli_fetch_assoc($result)){
+                                        echo $row['user_name'];
+                                    }
+                                } ?>
+                                
+                            </h5></i>
+                            <li class="nav-item dropdown">
+                            <a class="fa fa-user nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                              
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="logout.php">logout</a>
+                            </div>
+                          </li>
  
                 </div>
             </div>
@@ -80,9 +105,9 @@ $user_data = check_login($con);
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
-        <div class="row align-items-center px-3">
-            <div class="col-lg-6 text-center text-lg-left">
+    <div class="container-xl bg-primary px-0 px-md-5 mb-5">
+        <div class="row align-items-center px-3 d-flex justify-content-center">
+            <div class="col-lg-6 text-center text-lg-left ">
                 <h1 class="text-white mb-4 mt-5 mt-lg-0">Totale Progress</h1>
                 <div>
                 <canvas id="myChart"></canvas>
@@ -90,7 +115,7 @@ $user_data = check_login($con);
 
          </div>
         </div>
-</div>
+
 <script>
 const data = {
   labels: [
@@ -102,7 +127,16 @@ const data = {
     'Onderzoekend handelen'
   ],
   datasets: [{
-    label: 'Jaar1',
+    label: '<?php 
+    $id = $_SESSION['user_id'];
+    $sql = "SELECT survey_data FROM survey where user_id='$id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_fetch_array($result);
+    echo $resultaatCheck[0];
+    ?>
+    ',
+    
     data: [<?php 
     $survey_id = $_SESSION['survey_id'];
     $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6) / 6) as test  FROM survey_answers where survey_id='$survey_id';";
@@ -120,6 +154,7 @@ const data = {
     ?>
     ,
     <?php 
+
     $survey_id = $_SESSION['survey_id'];
     $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4) /4)  as test  FROM onderzoekvak where survey_id='$survey_id';";
 
@@ -198,6 +233,7 @@ const data = {
     
     ?>
     ],
+    
     fill: true,
     backgroundColor: 'rgba(255, 99, 132, 0.2)',
     borderColor: 'rgb(255, 99, 132)',
@@ -205,23 +241,188 @@ const data = {
     pointBorderColor: '#fff',
     pointHoverBackgroundColor: '#fff',
     pointHoverBorderColor: 'rgb(255, 99, 132)'
-  }]
-};
+  },
+  // tweee lijn
 
+
+  // twee lijn
+  {
+    label: '<?php 
+    
+    $id = $_SESSION['user_id'];
+    
+    $sql = "SELECT survey_data FROM survey where user_id='$id';";
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+    $resultaat = mysqli_fetch_array($result);
+    if($resultaatCheck == 2){
+    
+    
+    echo $resultaat[1];
+    }
+    else {
+        echo "Jaar 2";
+    }
+    ?>
+    ',
+    
+    data: [<?php 
+    $id = $_SESSION['user_id'];
+    
+    $sql = "SELECT survey_data FROM survey where user_id='$id';";
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+    $resultaat = mysqli_fetch_array($result);
+    if($resultaatCheck == 2){
+        $survey_id = $_SESSION['survey_id'];
+        $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6) / 6) as test  FROM survey_answers where survey_id='$survey_id';";
+
+        $result = mysqli_query($con, $sql);
+        $resultaatCheck = mysqli_num_rows($result);
+
+        if ($resultaatCheck > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo $row['test'];
+            }
+        }      
+    }
+    else{
+        echo "0";
+    }
+    
+    ?>
+    ,
+    <?php 
+    $id = $_SESSION['user_id'];
+    
+    $sql = "SELECT survey_data FROM survey where user_id='$id';";
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+    $resultaat = mysqli_fetch_array($result);
+    if($resultaatCheck == 2){
+        $survey_id = $_SESSION['survey_id'];
+        $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 ) / 4) as test  FROM survey_answers where survey_id='$survey_id';";
+
+        $result = mysqli_query($con, $sql);
+        $resultaatCheck = mysqli_num_rows($result);
+
+        if ($resultaatCheck > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo $row['test'];
+            }
+        }      
+    }
+    else{
+        echo "0";
+    }
+    
+    ?>
+    , 
+    <?php 
+    $id = $_SESSION['user_id'];
+    
+    $sql = "SELECT survey_data FROM survey where user_id='$id';";
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+    $resultaat = mysqli_fetch_array($result);
+
+    if($resultaatCheck == 2){
+        $survey_id = $_SESSION['survey_id'];
+        $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6) / 6) as test  FROM survey_answers where survey_id='$survey_id';";
+
+        $result = mysqli_query($con, $sql);
+        $resultaatCheck = mysqli_num_rows($result);
+
+        if ($resultaatCheck > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo $row['test'];
+            }
+        }      
+    }
+    else{
+        echo "0";
+    }
+    
+    
+    
+    ?>
+    , 
+    <?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9) / 9) as test  FROM onderzoeksvaardigheden where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    
+    
+    ?>
+    , 
+    <?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9 +vraag10) / 10) as test  FROM onderzoekend where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    
+    
+    ?>
+    , <?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9 +vraag10) / 10) as test  FROM toepassen where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    
+    
+    ?>
+    ],
+    
+    fill: true,
+    backgroundColor: 'rgba(132, 255, 99, 0.2)',
+    borderColor: 'rgb(132, 255, 99)',
+    pointBackgroundColor: 'rgb(132, 255, 99)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgb(132, 255, 99)'
+  },
+  
+
+]
+  
+};
 const config = {
   type: 'radar',
   data: data,
   options: {
     scale: {
     ticks: {
-        
-        max: 5,
-        min: 0,
-        stepSize: 0.5
+            max: 5,
+            min: 0,
+            stepSize: 0.5
     }
 }
   },
-};
+}
+
+
 </script>
 <script>
   const myChart = new Chart(
@@ -230,6 +431,7 @@ const config = {
   );
 </script>
 
+</div>
 </body>
 
 </html>

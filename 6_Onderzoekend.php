@@ -116,7 +116,28 @@ echo '<script type="text/javascript">
                               <a class="dropdown-item" href="handelen.php">Onderzoekend handelen</a>
                             </div>
                           </li>
-                        <i class="fa fa-user"></i>
+                          <i class="fa mt-3"><h5>welkom</h5><h5>
+                            <?php 
+                            $id = $_SESSION['user_id'];
+                            $sql = "SELECT * FROM users where user_id='$id';";
+                                $result = mysqli_query($con, $sql);
+                                $resultaatCheck = mysqli_num_rows($result);
+
+                                if ($resultaatCheck > 0){
+                                    while($row = mysqli_fetch_assoc($result)){
+                                        echo $row['user_name'];
+                                    }
+                                } ?>
+                                
+                            </h5></i>
+                            <li class="nav-item dropdown">
+                            <a class="fa fa-user nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                              
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="logout.php">logout</a>
+                            </div>
+                          </li>
  
                 </div>
             </div>
@@ -152,7 +173,7 @@ echo '<script type="text/javascript">
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Verwondert zich over situaties in de praktijk en stelt vragen</td>
+      <td>verwondert zich over situaties in de praktijk en stelt vragen</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag1" value="1" type="radio"></div>
                       <div class="b"><input name="vraag1" value="2" type="radio"></div>
@@ -163,7 +184,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>Verzamelt systematisch gegevens door middel van observaties,<br>vragenlijsten en interviews met passende instrumenten</td>
+      <td>verzamelt systematisch gegevens door middel van observaties,<br>vragenlijsten en interviews met passende instrumenten</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag2" value="1" type="radio"></div>
                       <div class="b"><input name="vraag2" value="2" type="radio"></div>
@@ -174,7 +195,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>Werkt systematisch aan praktijkvragen</td>
+      <td>werkt systematisch aan praktijkvragen</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag3" value="1" type="radio"></div>
                       <div class="b"><input name="vraag3" value="2" type="radio"></div>
@@ -185,7 +206,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">4</th>
-      <td>Ontwerpt op basis van praktijkvragen</td>
+      <td>ontwerpt op basis van praktijkvragen</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag4" value="1" type="radio"></div>
                       <div class="b"><input name="vraag4" value="2" type="radio"></div>
@@ -196,7 +217,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">5</th>
-      <td>Evalueert systematisch de eigen praktijk</td>
+      <td>evalueert systematisch de eigen praktijk</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag5" value="1" type="radio"></div>
                       <div class="b"><input name="vraag5" value="2" type="radio"></div>
@@ -207,7 +228,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">6</th>
-      <td>Reflecteert op product, proces en eigen leervermogen</td>
+      <td>reflecteert op product, proces en eigen leervermogen</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag6" value="1" type="radio"></div>
                       <div class="b"><input name="vraag6" value="2" type="radio"></div>
@@ -218,7 +239,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">7</th>
-      <td>Experimenteert door nieuwe inzichten toe te passen in de praktijk</td>
+      <td>experimenteert door nieuwe inzichten toe te passen in de praktijk</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag7" value="1" type="radio"></div>
                       <div class="b"><input name="vraag7" value="2" type="radio"></div>
@@ -229,7 +250,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">8</th>
-      <td>Accepteert onzekerheid als natuurlijk aspect van de professie<br> en de eigen
+      <td>accepteert onzekerheid als natuurlijk aspect van de professie<br> en de eigen
 
 professionele ontwikkeling</td>
       <td ><fieldset class="optGroup">
@@ -242,7 +263,7 @@ professionele ontwikkeling</td>
     </tr>
     <tr>
       <th scope="row">9</th>
-      <td>Bespreekt onderwijskundige vraagstukken</td>
+      <td>bespreekt onderwijskundige vraagstukken</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag9" value="1" type="radio"></div>
                       <div class="b"><input name="vraag9" value="2" type="radio"></div>
@@ -253,7 +274,7 @@ professionele ontwikkeling</td>
     </tr>
     <tr>
       <th scope="row">10</th>
-      <td>Presenteert onderzochte bevindingen</td>
+      <td>presenteert onderzochte bevindingen</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag10" value="1" type="radio"></div>
                       <div class="b"><input name="vraag10" value="2" type="radio"></div>
@@ -265,7 +286,7 @@ professionele ontwikkeling</td>
     <tr>
       <th scope="row">TEXT</th>
       <td><div class="input-group">
-  <textarea class="form-control" aria-label="With textarea" name="text" placeholder="Onderbouw waarom je deze criteria hebt behaald"></textarea>
+  <textarea class="form-control" aria-label="With textarea" name="text" placeholder="Vul hier waarom je dit niveau hebt gehaald"></textarea>
 </div></td>
       <td><input class="favorite styled"
        type="submit"
