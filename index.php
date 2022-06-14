@@ -5,6 +5,10 @@ include("functions.php");
 $id = $_SESSION['user_id'];
 $user_data = check_login($con);
 
+$sql = "SELECT * FROM users where user_id='$id';";
+
+
+
 ?>
 
 <html>
@@ -39,6 +43,7 @@ $user_data = check_login($con);
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/FLEX.css" rel="stylesheet">
 </head>
 
 <body>
@@ -56,21 +61,29 @@ $user_data = check_login($con);
                     <div class="navbar-nav font-weight-bold mx-auto py-0">
                         <a href="index.php" class="nav-item nav-link active">Hoofdpagina</a> 
                         <a href="progress.php" class="nav-item nav-link ">Progress</a>
-                       <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                              Onderzoekend Voortgang
+                        <a href="progress.php" class="nav-item nav-link ">DOE DE TEST</a>
+                        <i class="fa mt-3"><h5>welkom</h5><h5>
+                            <?php 
+                            $id = $_SESSION['user_id'];
+                            $sql = "SELECT * FROM users where user_id='$id';";
+                                $result = mysqli_query($con, $sql);
+                                $resultaatCheck = mysqli_num_rows($result);
+
+                                if ($resultaatCheck > 0){
+                                    while($row = mysqli_fetch_assoc($result)){
+                                        echo $row['user_name'];
+                                    }
+                                } ?>
+                                
+                            </h5></i>
+                            <li class="nav-item dropdown">
+                            <a class="fa fa-user nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                              
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="survey_name.php">Onderzoekende houding</a>
-                              <a class="dropdown-item" href="vakleer.php">Onderzoek in het vak(leer)gebied</a>
-                              <a class="dropdown-item" href="fenomeen.php">Fenomeen Onderzoek</a>
-                              <a class="dropdown-item" href="vaardigheden.php">Onderzoeksvaardigheden</a>
-                              <a class="dropdown-item" href="praktijk.php">Toepassen in praktijk</a>
-                              <a class="dropdown-item" href="handelen.php">Onderzoekend handelen</a>
+                              <a class="dropdown-item" href="logout.php">logout</a>
                             </div>
                           </li>
-                        <i class="fa fa-user"></i>
- 
                 </div>
             </div>
         </nav>

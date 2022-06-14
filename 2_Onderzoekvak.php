@@ -111,7 +111,28 @@ echo '<script type="text/javascript">
                               <a class="dropdown-item" href="handelen.php">Onderzoekend handelen</a>
                             </div>
                           </li>
-                        <i class="fa fa-user"></i>
+                          <i class="fa mt-3"><h5>welkom</h5><h5>
+                            <?php 
+                            $id = $_SESSION['user_id'];
+                            $sql = "SELECT * FROM users where user_id='$id';";
+                                $result = mysqli_query($con, $sql);
+                                $resultaatCheck = mysqli_num_rows($result);
+
+                                if ($resultaatCheck > 0){
+                                    while($row = mysqli_fetch_assoc($result)){
+                                        echo $row['user_name'];
+                                    }
+                                } ?>
+                                
+                            </h5></i>
+                            <li class="nav-item dropdown">
+                            <a class="fa fa-user nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                              
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="logout.php">logout</a>
+                            </div>
+                          </li>
  
                 </div>
             </div>
