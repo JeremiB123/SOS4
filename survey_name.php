@@ -2,16 +2,46 @@
 session_start();
 include("connection.php");
 include("functions.php");
-$id = $_SESSION['user_id'];
+
 $user_data = check_login($con);
 
+
+
+
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{	
+	$id = $_SESSION['user_id'];
+	
+	
+	$survey_id = random_num(20);
+	$_SESSION['survey_id'] = $survey_id;
+	$sql_survey = "INSERT INTO  survey (survey_id, user_id)
+	VALUES ('$survey_id', '$id')";
+		
+
+	if (mysqli_query($con, $sql_survey)) 
+	  {
+		 echo "New Details Entry inserted successfully !";
+		 header("Location: 1_houding.php");
+		 
+						
+		 
+	  }
+	 else
+     {
+		echo "Error: " . $sql . "" . mysqli_error($con);
+	 }
+	 mysqli_close($con);
+
+}
 ?>
 
-<html>
 
+
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>Onderzoekend vermogen</title>
+<meta charset="utf-8">
+    <title>connection</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -39,11 +69,10 @@ $user_data = check_login($con);
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/FLEX.css" rel="stylesheet">
 </head>
-
-<body>
-    <!-- Navbar Start -->
-    <div class="container-fluid bg-light position-relative shadow">
+ <!-- Navbar Start -->
+ <div class="container-fluid bg-light position-relative shadow">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
             <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
                 <span class="text-primary">Onderzoekend vermogen </span>
@@ -54,14 +83,14 @@ $user_data = check_login($con);
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav font-weight-bold mx-auto py-0">
-                        <a href="index.php" class="nav-item nav-link active">Hoofdpagina</a> 
-                        <a href="progress.php" class="nav-item nav-link ">Progress</a>
+                        <a href="index.php" class="nav-item nav-link">Hoofdpagina</a> 
+                        <a href="progress.php" class="nav-item nav-link">Progress</a>
                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                               Onderzoekend Voortgang
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="survey_name.php">Onderzoekende houding</a>
+                              <a class="dropdown-item" href="houding.php">Onderzoekende houding</a>
                               <a class="dropdown-item" href="vakleer.php">Onderzoek in het vak(leer)gebied</a>
                               <a class="dropdown-item" href="fenomeen.php">Fenomeen Onderzoek</a>
                               <a class="dropdown-item" href="vaardigheden.php">Onderzoeksvaardigheden</a>
@@ -76,24 +105,35 @@ $user_data = check_login($con);
         </nav>
     </div>
     <!-- Navbar End -->
+	
+	<div class="container-lg bg-primary w-100 h-75 p-4 ">
+	<div class="text-white">
+	<h2>ONDERZOEKEND VERMOGEN TEST</h2>
+		<p class="h5 text-white">Wat zijn mijn sterke punten? Vergelijk jezelf</p>
+		<p class="h5 text-white">Het duurt 15-20 minuten om deze test te voltooien</p>
+		<h2 text-white >Instructions</h2>
+			<p class="h5 text-white">Hieronder vind u 50 vragen. Geef aan in hoeverre u denkt dat deze uitspraken op u van toepassing zijn. Zorg ervoor dat je beschrijft hoe je bent in plaats van hoe je wilt zijn.</p>
+			<h4>Voor elke stelling zijn er 5 mogelijke antwoorden waaruit u kunt kiezen:</h4>
 
-
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
-        <div class="row align-items-center px-3">
-            <div class="col-lg-6 text-center text-lg-left">
-                <h3 class="text-white">Onderzoekend vermogen</h3>
-                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-
-            </div>
-                  <p></p>
-                  <p></p>
-                  <p></p>
-            </div>
-        </div>
-    </div>
-
-
+			<p class="h5 text-white">- - deze verklaring is helemaal niet van toepassing op mij / nooit van toepassing op mij</p>
+			<p class="h5 text-white">- deze uitspraak is enigszins / soms van toepassing op mij</p>
+			<p class="h5 text-white">-/+ deze uitspraak is redelijk van toepassing op mij / regelmatig van toepassing op mij</p>
+			<p class="h5 text-white">+ deze stelling is zeker van toepassing op mij / vaak van toepassing op mij</p>
+			<p class="h5 text-white">++ deze uitspraak geldt volledig / altijd voor mij</p>
+			<h4>Denk niet te lang na over de uitspraken; er zijn geen goede of foute antwoorden.</h4>
+</div>
+<body bgcolor="#32e692">
+	<div align="center">
+		<!--<h1>Details Entry Form</h1>-->
+	</div>
+<form action="survey_name.php" method="post">
+	<table border="1" align="center">
+	
+	<td><input class="favorite styled"
+       type="submit"
+       value="Next page" name="save"></td>
+	</table>
+</div>
+</form>
 </body>
 </html>
