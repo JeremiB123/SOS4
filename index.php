@@ -47,11 +47,13 @@ $sql = "SELECT * FROM users where user_id='$id';";
 </head>
 
 <body>
+
     <!-- Navbar Start -->
     <div class="container-fluid bg-light position-relative shadow">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
             <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
-                <span class="text-primary">Onderzoekend vermogen </span>
+               
+            <span class="text-primary">Onderzoekend vermogen </span>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -84,6 +86,24 @@ $sql = "SELECT * FROM users where user_id='$id';";
                               <a class="dropdown-item" href="logout.php">logout</a>
                             </div>
                           </li>
+<<<<<<< HEAD
+=======
+                        <i class="fa "><h5>welkom</h5><h5>
+                            <?php 
+                            $id = $_SESSION['user_id'];
+                            $sql = "SELECT * FROM users where user_id='$id';";
+                                $result = mysqli_query($con, $sql);
+                                $resultaatCheck = mysqli_num_rows($result);
+
+                                if ($resultaatCheck > 0){
+                                    while($row = mysqli_fetch_assoc($result)){
+                                        echo $row['user_name'];
+                                    }
+                                } ?>
+                                
+                            </h5></i>
+ 
+>>>>>>> f16386a99e10e6e11cc42b621e8510e1b48775e0
                 </div>
             </div>
         </nav>
@@ -95,10 +115,12 @@ $sql = "SELECT * FROM users where user_id='$id';";
     <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
         <div class="row align-items-center px-3">
             <div class="col-lg-6 text-center text-lg-left">
-                <h3 class="text-white">Onderzoekend vermogen</h3>
-                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h3 class="text-white">BEKWAAMHEID ONDERZOEKEND VERMOGEN</h3>
+                <p class="text-white">Bekwaamheid onderzoekend vermogen wil zeggen dat de leraar de bekwaamheid toont om praktijkonderzoek te doen én te gebruiken ter verbetering van de eigen beroepspraktijk door de integratie van een onderzoekende houding, kennis over het fenomeen onderzoek, onderzoekend handelen, onderzoeksvaardigheden, het kunnen toepassen van onderzoeksresultaten in de praktijk en kennis over onderzoek in het vakgebied.
+De zes aspecten van onderzoekend vermogen zijn in de praktijk onlosmakelijk met elkaar verbonden en verweven. Om het onderzoekend vermogen te trainen en de ontwikkeling in kaart te brengen is het echter functioneel om de verschillende aspecten afzonderlijk te benaderen. 
 
-
+Op deze website kun je je voortgang in Onderzoekend Vermogen vastleggen aan de hand van 6 aspecten, en onderbouwing toevoegen om in te zetten bij bijvoorbeeld assessments.
+</p>
             </div>
                   <p></p>
                   <p></p>

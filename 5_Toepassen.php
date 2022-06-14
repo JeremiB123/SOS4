@@ -159,7 +159,7 @@ if(isset($_POST['save']))
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">vragen</th>
+      <th scope="col">Vragen</th>
       <th scope="col"><div class="a">
                   <div class="b"><p class="text-white">--</p></div>
                   <div class="b"><p class="text-white">-</p></div>
@@ -173,7 +173,7 @@ if(isset($_POST['save']))
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>is bekend met resultaten uit eerder onderzoek</td>
+      <td>Is bekend met resultaten uit eerder onderzoek</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag1" value="1" type="radio"></div>
                       <div class="b"><input name="vraag1" value="2" type="radio"></div>
@@ -184,7 +184,7 @@ if(isset($_POST['save']))
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>past resultaten uit eerder onderzoek en nieuwe ontwikkelingen toe</td>
+      <td>Past resultaten uit eerder onderzoek en nieuwe ontwikkelingen toe</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag2" value="1" type="radio"></div>
                       <div class="b"><input name="vraag2" value="2" type="radio"></div>
@@ -195,7 +195,7 @@ if(isset($_POST['save']))
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>herhaalt bestaand onderzoek en/of zet nieuw onderzoek op</td>
+      <td>Herhaalt bestaand onderzoek en/of zet nieuw onderzoek op</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag3" value="1" type="radio"></div>
                       <div class="b"><input name="vraag3" value="2" type="radio"></div>
@@ -206,7 +206,7 @@ if(isset($_POST['save']))
     </tr>
     <tr>
       <th scope="row">4</th>
-      <td>maakt gebruik van bestaande onderzoeksinstrumenten</td>
+      <td>Maakt gebruik van bestaande onderzoeksinstrumenten</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag4" value="1" type="radio"></div>
                       <div class="b"><input name="vraag4" value="2" type="radio"></div>
@@ -217,7 +217,7 @@ if(isset($_POST['save']))
     </tr>
     <tr>
       <th scope="row">5</th>
-      <td>ontwerpt een interventie op basis van bestaand onderzoek</td>
+      <td>Ontwerpt een interventie op basis van bestaand onderzoek</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag5" value="1" type="radio"></div>
                       <div class="b"><input name="vraag5" value="2" type="radio"></div>
@@ -228,7 +228,7 @@ if(isset($_POST['save']))
     </tr>
     <tr>
       <th scope="row">6</th>
-      <td>raadpleegt een expert naar aanleiding van een praktijkvraag</td>
+      <td>Raadpleegt een expert naar aanleiding van een praktijkvraag</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag6" value="1" type="radio"></div>
                       <div class="b"><input name="vraag6" value="2" type="radio"></div>
@@ -239,7 +239,7 @@ if(isset($_POST['save']))
     </tr>
     <tr>
       <th scope="row">7</th>
-      <td>analyseert protocollen en vertaalt deze naar de eigen praktijk</td>
+      <td>Analyseert protocollen en vertaalt deze naar de eigen praktijk</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag7" value="1" type="radio"></div>
                       <div class="b"><input name="vraag7" value="2" type="radio"></div>
@@ -250,7 +250,7 @@ if(isset($_POST['save']))
     </tr>
     <tr>
       <th scope="row">8</th>
-      <td>bediscussieert onderwijskundig onderzoek</td>
+      <td>Bediscussieert onderwijskundig onderzoek</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag8" value="1" type="radio"></div>
                       <div class="b"><input name="vraag8" value="2" type="radio"></div>
@@ -261,7 +261,7 @@ if(isset($_POST['save']))
     </tr>
     <tr>
       <th scope="row">9</th>
-      <td>creëert onderwijskundige varianten op basis van bestaande ideeën</td>
+      <td>Creëert onderwijskundige varianten op basis van bestaande ideeën</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag9" value="1" type="radio"></div>
                       <div class="b"><input name="vraag9" value="2" type="radio"></div>
@@ -272,7 +272,7 @@ if(isset($_POST['save']))
     </tr>
     <tr>
       <th scope="row">10</th>
-      <td>test prototypes op bruikbaarheid in de eigen praktijk</td>
+      <td>Test prototypes op bruikbaarheid in de eigen praktijk</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag10" value="1" type="radio"></div>
                       <div class="b"><input name="vraag10" value="2" type="radio"></div>
@@ -284,7 +284,7 @@ if(isset($_POST['save']))
     <tr>
       <th scope="row">TEXT</th>
       <td><div class="input-group">
-  <textarea class="form-control" aria-label="With textarea" name="text" placeholder="Vul hier waarom je dit niveau hebt gehaald"></textarea>
+  <textarea class="form-control" aria-label="With textarea" name="text" placeholder="Onderbouw waarom je deze criteria hebt behaald"></textarea>
 </div></td>
       <td><input class="favorite styled"
        type="submit"

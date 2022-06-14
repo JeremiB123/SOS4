@@ -159,7 +159,7 @@ echo '<script type="text/javascript">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">vragen</th>
+      <th scope="col">Vragen</th>
       <th scope="col">
                   <div class="b"><p class="text-white">--</p></div>
                   <div class="b"><p class="text-white">-</p></div>
@@ -173,7 +173,7 @@ echo '<script type="text/javascript">
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>kan een probleemanalyse uitvoeren / kernprobleem formuleren</td>
+      <td>Kan een probleemanalyse uitvoeren / kernprobleem formuleren</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag1" value="1" type="radio"></div>
                       <div class="b"><input name="vraag1" value="2" type="radio"></div>
@@ -184,7 +184,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>gebruikt relevante theorie en kan keuzes verantwoorden</td>
+      <td>Gebruikt relevante theorie en kan keuzes verantwoorden</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag2" value="1" type="radio"></div>
                       <div class="b"><input name="vraag2" value="2" type="radio"></div>
@@ -195,7 +195,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>kan een passende onderzoeksvraag en eventuele ontwerpeisen opstellen</td>
+      <td>Kan een passende onderzoeksvraag en eventuele ontwerpeisen opstellen</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag3" value="1" type="radio"></div>
                       <div class="b"><input name="vraag3" value="2" type="radio"></div>
@@ -206,7 +206,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">4</th>
-      <td>kan een onderzoeksmethode kiezen die aansluit bij de vraag</td>
+      <td>Kan een onderzoeksmethode kiezen die aansluit bij de vraag</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag4" value="1" type="radio"></div>
                       <div class="b"><input name="vraag4" value="2" type="radio"></div>
@@ -217,7 +217,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">5</th>
-      <td>kan een probleemanalyse uitvoeren / kernprobleem formuleren</td>
+      <td>Kan een probleemanalyse uitvoeren / kernprobleem formuleren</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag5" value="1" type="radio"></div>
                       <div class="b"><input name="vraag5" value="2" type="radio"></div>
@@ -228,7 +228,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">6</th>
-      <td>gebruikt relevante theorie en kan keuzes verantwoorden</td>
+      <td>Gebruikt relevante theorie en kan keuzes verantwoorden</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag6" value="1" type="radio"></div>
                       <div class="b"><input name="vraag6" value="2" type="radio"></div>
@@ -239,7 +239,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">7</th>
-      <td>kan een passende onderzoeksvraag en eventuele ontwerpeisen opstellen</td>
+      <td>Kan een passende onderzoeksvraag en eventuele ontwerpeisen opstellen</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag7" value="1" type="radio"></div>
                       <div class="b"><input name="vraag7" value="2" type="radio"></div>
@@ -250,7 +250,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">8</th>
-      <td>kan een onderzoeksmethode kiezen die aansluit bij de vraag</td>
+      <td>Kan een onderzoeksmethode kiezen die aansluit bij de vraag</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag8" value="1" type="radio"></div>
                       <div class="b"><input name="vraag8" value="2" type="radio"></div>
@@ -261,7 +261,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">9</th>
-      <td>kan een onderzoeksmethode kiezen die aansluit bij de vraag</td>
+      <td>Kan een onderzoeksmethode kiezen die aansluit bij de vraag</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag9" value="1" type="radio"></div>
                       <div class="b"><input name="vraag9" value="2" type="radio"></div>
@@ -273,7 +273,7 @@ echo '<script type="text/javascript">
     <tr>
       <th scope="row">TEXT</th>
       <td><div class="input-group">
-  <textarea class="form-control" aria-label="With textarea" name="text" placeholder="Vul hier waarom je dit niveau hebt gehaald"></textarea>
+  <textarea class="form-control" aria-label="With textarea" name="text" placeholder="Onderbouw waarom je deze criteria hebt behaald"></textarea>
 </div></td>
       <td><input class="favorite styled"
        type="submit"
