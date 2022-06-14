@@ -5,6 +5,10 @@ include("functions.php");
 
 $user_data = check_login($con);
 
+
+       
+    
+
 ?>
 
 <html>
@@ -101,18 +105,14 @@ $user_data = check_login($con);
 
 
     <!-- Header Start -->
-    <div class="container bg-primary px-0 px-md-5 mb-5">
+    <div class="container-xl bg-primary px-0 px-md-5 mb-5">
         <div class="row align-items-center px-3 d-flex justify-content-center">
             <div class="col-lg-6 text-center text-lg-left ">
                 <h1 class="text-white mb-4 mt-5 mt-lg-0">Totale Progress</h1>
                 <div>
                 <canvas id="myChart"></canvas>
-                
                 </div>
-                <div class="progress">
-                 <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%" aria-valuenow="value" aria-valuemin="0" aria-valuemax="275"></div>
-                 
-            </div>
+
          </div>
         </div>
 
@@ -123,11 +123,19 @@ const data = {
     'Onderzoek in het vak(leer)gebied',
     'Fenomeen onderzoek',
     'Onderzoeksvaardigheden',
-    'Toepassing onderzoek',
+    'Toepassing onderzoeksresultaten',
     'Onderzoekend handelen'
   ],
   datasets: [{
-    label: 'Jaar1',
+    label: '<?php 
+    $id = $_SESSION['user_id'];
+    $sql = "SELECT survey_data FROM survey where user_id='$id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_fetch_array($result);
+    echo $resultaatCheck[0];
+    ?>
+    ',
     
     data: [<?php 
     $survey_id = $_SESSION['survey_id'];
@@ -146,6 +154,7 @@ const data = {
     ?>
     ,
     <?php 
+
     $survey_id = $_SESSION['survey_id'];
     $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4) /4)  as test  FROM onderzoekvak where survey_id='$survey_id';";
 
@@ -232,6 +241,167 @@ const data = {
     pointBorderColor: '#fff',
     pointHoverBackgroundColor: '#fff',
     pointHoverBorderColor: 'rgb(255, 99, 132)'
+  },
+  // tweee lijn
+
+
+  // twee lijn
+  {
+    label: '<?php 
+    
+    $id = $_SESSION['user_id'];
+    
+    $sql = "SELECT survey_data FROM survey where user_id='$id';";
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+    $resultaat = mysqli_fetch_array($result);
+    if($resultaatCheck == 2){
+    
+    
+    echo $resultaat[1];
+    }
+    else {
+        echo "Jaar 2";
+    }
+    ?>
+    ',
+    
+    data: [<?php 
+    $id = $_SESSION['user_id'];
+    
+    $sql = "SELECT survey_data FROM survey where user_id='$id';";
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+    $resultaat = mysqli_fetch_array($result);
+    if($resultaatCheck == 2){
+        $survey_id = $_SESSION['survey_id'];
+        $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6) / 6) as test  FROM survey_answers where survey_id='$survey_id';";
+
+        $result = mysqli_query($con, $sql);
+        $resultaatCheck = mysqli_num_rows($result);
+
+        if ($resultaatCheck > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo $row['test'];
+            }
+        }      
+    }
+    else{
+        echo "0";
+    }
+    
+    ?>
+    ,
+    <?php 
+    $id = $_SESSION['user_id'];
+    
+    $sql = "SELECT survey_data FROM survey where user_id='$id';";
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+    $resultaat = mysqli_fetch_array($result);
+    if($resultaatCheck == 2){
+        $survey_id = $_SESSION['survey_id'];
+        $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 ) / 4) as test  FROM survey_answers where survey_id='$survey_id';";
+
+        $result = mysqli_query($con, $sql);
+        $resultaatCheck = mysqli_num_rows($result);
+
+        if ($resultaatCheck > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo $row['test'];
+            }
+        }      
+    }
+    else{
+        echo "0";
+    }
+    
+    ?>
+    , 
+    <?php 
+    $id = $_SESSION['user_id'];
+    
+    $sql = "SELECT survey_data FROM survey where user_id='$id';";
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+    $resultaat = mysqli_fetch_array($result);
+
+    if($resultaatCheck == 2){
+        $survey_id = $_SESSION['survey_id'];
+        $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6) / 6) as test  FROM survey_answers where survey_id='$survey_id';";
+
+        $result = mysqli_query($con, $sql);
+        $resultaatCheck = mysqli_num_rows($result);
+
+        if ($resultaatCheck > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo $row['test'];
+            }
+        }      
+    }
+    else{
+        echo "0";
+    }
+    
+    
+    
+    ?>
+    , 
+    <?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9) / 9) as test  FROM onderzoeksvaardigheden where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    
+    
+    ?>
+    , 
+    <?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9 +vraag10) / 10) as test  FROM onderzoekend where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    
+    
+    ?>
+    , <?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9 +vraag10) / 10) as test  FROM toepassen where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    
+    
+    ?>
+    ],
+    
+    fill: true,
+    backgroundColor: 'rgba(132, 255, 99, 0.2)',
+    borderColor: 'rgb(132, 255, 99)',
+    pointBackgroundColor: 'rgb(132, 255, 99)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgb(132, 255, 99)'
   },
   
 
