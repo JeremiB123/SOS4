@@ -159,7 +159,7 @@ echo '<script type="text/javascript">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">vragen</th>
+      <th scope="col">Vragen</th>
       <th scope="col"><div class="a">
                   <div class="b"><p class="text-white">--</p></div>
                   <div class="b"><p class="text-white">-</p></div>
@@ -173,7 +173,7 @@ echo '<script type="text/javascript">
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>verwondert zich over situaties in de praktijk en stelt vragen</td>
+      <td>Verwondert zich over situaties in de praktijk en stelt vragen</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag1" value="1" type="radio"></div>
                       <div class="b"><input name="vraag1" value="2" type="radio"></div>
@@ -184,7 +184,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>verzamelt systematisch gegevens door middel van observaties,<br>vragenlijsten en interviews met passende instrumenten</td>
+      <td>Verzamelt systematisch gegevens door middel van observaties,<br>vragenlijsten en interviews met passende instrumenten</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag2" value="1" type="radio"></div>
                       <div class="b"><input name="vraag2" value="2" type="radio"></div>
@@ -195,7 +195,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>werkt systematisch aan praktijkvragen</td>
+      <td>Werkt systematisch aan praktijkvragen</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag3" value="1" type="radio"></div>
                       <div class="b"><input name="vraag3" value="2" type="radio"></div>
@@ -206,7 +206,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">4</th>
-      <td>ontwerpt op basis van praktijkvragen</td>
+      <td>Ontwerpt op basis van praktijkvragen</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag4" value="1" type="radio"></div>
                       <div class="b"><input name="vraag4" value="2" type="radio"></div>
@@ -217,7 +217,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">5</th>
-      <td>evalueert systematisch de eigen praktijk</td>
+      <td>Evalueert systematisch de eigen praktijk</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag5" value="1" type="radio"></div>
                       <div class="b"><input name="vraag5" value="2" type="radio"></div>
@@ -228,7 +228,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">6</th>
-      <td>reflecteert op product, proces en eigen leervermogen</td>
+      <td>Reflecteert op product, proces en eigen leervermogen</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag6" value="1" type="radio"></div>
                       <div class="b"><input name="vraag6" value="2" type="radio"></div>
@@ -239,7 +239,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">7</th>
-      <td>experimenteert door nieuwe inzichten toe te passen in de praktijk</td>
+      <td>Experimenteert door nieuwe inzichten toe te passen in de praktijk</td>
       <td><fieldset class="optGroup">
                       <div class="b"><input name="vraag7" value="1" type="radio"></div>
                       <div class="b"><input name="vraag7" value="2" type="radio"></div>
@@ -250,7 +250,7 @@ echo '<script type="text/javascript">
     </tr>
     <tr>
       <th scope="row">8</th>
-      <td>accepteert onzekerheid als natuurlijk aspect van de professie<br> en de eigen
+      <td>Accepteert onzekerheid als natuurlijk aspect van de professie<br> en de eigen
 
 professionele ontwikkeling</td>
       <td ><fieldset class="optGroup">
@@ -263,7 +263,7 @@ professionele ontwikkeling</td>
     </tr>
     <tr>
       <th scope="row">9</th>
-      <td>bespreekt onderwijskundige vraagstukken</td>
+      <td>Bespreekt onderwijskundige vraagstukken</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag9" value="1" type="radio"></div>
                       <div class="b"><input name="vraag9" value="2" type="radio"></div>
@@ -274,7 +274,7 @@ professionele ontwikkeling</td>
     </tr>
     <tr>
       <th scope="row">10</th>
-      <td>presenteert onderzochte bevindingen</td>
+      <td>Presenteert onderzochte bevindingen</td>
       <td ><fieldset class="optGroup">
                       <div class="b"><input name="vraag10" value="1" type="radio"></div>
                       <div class="b"><input name="vraag10" value="2" type="radio"></div>

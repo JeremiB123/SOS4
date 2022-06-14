@@ -95,10 +95,9 @@ $sql = "SELECT * FROM users where user_id='$id';";
     <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
         <div class="row align-items-center px-3">
             <div class="col-lg-6 text-center text-lg-left">
-                <h3 class="text-white">Onderzoekend vermogen</h3>
-                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-
+                <h3 class="text-white">BEKWAAMHEID ONDERZOEKEND VERMOGEN</h3>
+                <p class="text-white">Bekwaamheid onderzoekend vermogen wil zeggen dat de leraar de bekwaamheid toont om praktijkonderzoek te doen én te gebruiken ter verbetering van de eigen beroepspraktijk door de integratie van een onderzoekende houding, kennis over het fenomeen onderzoek, onderzoekend handelen, onderzoeksvaardigheden, het kunnen toepassen van onderzoeksresultaten in de praktijk en kennis over onderzoek in het vakgebied.
+De zes aspecten van onderzoekend vermogen zijn in de praktijk onlosmakelijk met elkaar verbonden en verweven. Om het onderzoekend vermogen te trainen en de ontwikkeling in kaart te brengen is het echter functioneel om de verschillende aspecten afzonderlijk te benaderen.</p>
             </div>
                   <p></p>
                   <p></p>
