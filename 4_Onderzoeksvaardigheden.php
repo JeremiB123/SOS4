@@ -27,7 +27,7 @@ if(isset($_POST['save']))
    $text = $_POST['text'];
    
    
-   if($vraag1 and $vraag2 and $vraag3 and $vraag4 and $vraag5 and $vraag6 > 0){
+   if($vraag1 and $vraag2 and $vraag3 and $vraag4 and $vraag5 and $vraag6 and $vraag7 and $vraag8 and $vraag9 > 0){
 	 $sql_query = "INSERT INTO onderzoeksvaardigheden (answer_id, survey_id, vraag1, vraag2, vraag3, vraag4, vraag5, vraag6, vraag7, vraag8, vraag9, beschrijving)
 	 VALUES ('','$survey_id','$vraag1', '$vraag2', '$vraag3', '$vraag4', '$vraag5', '$vraag6','$vraag7','$vraag8','$vraag9', '$text')";
 
@@ -103,19 +103,7 @@ echo '<script type="text/javascript">
                     <div class="navbar-nav font-weight-bold mx-auto py-0">
                         <a href="index.php" class="nav-item nav-link">Hoofdpagina</a> 
                         <a href="progress.php" class="nav-item nav-link">Progress</a>
-                       <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                              Onderzoekend Voortgang
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="houding.php">Onderzoekende houding</a>
-                              <a class="dropdown-item" href="vakleer.php">Onderzoek in het vak(leer)gebied</a>
-                              <a class="dropdown-item" href="fenomeen.php">Fenomeen Onderzoek</a>
-                              <a class="dropdown-item" href="vaardigheden.php">Onderzoeksvaardigheden</a>
-                              <a class="dropdown-item" href="praktijk.php">Toepassen in praktijk</a>
-                              <a class="dropdown-item" href="handelen.php">Onderzoekend handelen</a>
-                            </div>
-                          </li>
+                        <a href="" class="nav-item nav-link active">DOE DE TEST</a>
                           <i class="fa mt-3"><h5>welkom</h5><h5>
                             <?php 
                             $id = $_SESSION['user_id'];

@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 	$id = $_SESSION['user_id'];
 	
 	
-	$survey_id = random_num(20);
+	$survey_id = random_num(3);
 	$_SESSION['survey_id'] = $survey_id;
 	$sql_survey = "INSERT INTO  survey (survey_id, user_id)
 	VALUES ('$survey_id', '$id')";

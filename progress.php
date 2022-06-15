@@ -5,6 +5,21 @@ include("functions.php");
 
 $user_data = check_login($con);
 
+//$id = $_SESSION['user_id'];
+    
+//$sql = "SELECT survey_data FROM survey where user_id='$id';";
+//$result = mysqli_query($con, $sql);
+//$resultaatCheck = mysqli_num_rows($result);
+//$resultaat = mysqli_fetch_array($result);
+//if($resultaatCheck == 2){
+
+
+//echo $resultaat[];
+//}
+//else {
+    //echo "Jaar 2";
+//}
+    
 
        
     
@@ -59,21 +74,9 @@ $user_data = check_login($con);
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav font-weight-bold mx-auto py-0">
-                        <a href="index.php" class="nav-item nav-link active">Hoofdpagina</a> 
-                        <a href="progress.php" class="nav-item nav-link ">Progress</a>
-                       <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                              Onderzoekend Voortgang
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="survey_name.php">Onderzoekende houding</a>
-                              <a class="dropdown-item" href="vakleer.php">Onderzoek in het vak(leer)gebied</a>
-                              <a class="dropdown-item" href="fenomeen.php">Fenomeen Onderzoek</a>
-                              <a class="dropdown-item" href="vaardigheden.php">Onderzoeksvaardigheden</a>
-                              <a class="dropdown-item" href="praktijk.php">Toepassen in praktijk</a>
-                              <a class="dropdown-item" href="handelen.php">Onderzoekend handelen</a>
-                            </div>
-                          </li>
+                        <a href="index.php" class="nav-item nav-link ">Hoofdpagina</a> 
+                        <a href="progress.php" class="nav-item nav-link active">Progress</a>
+                        <a href="survey_name.php" class="nav-item nav-link ">DOE DE TEST</a>
                           <i class="fa mt-3"><h5>welkom</h5><h5>
                             <?php 
                             $id = $_SESSION['user_id'];
@@ -269,22 +272,18 @@ const data = {
     data: [<?php 
     $id = $_SESSION['user_id'];
     
-    $sql = "SELECT survey_data FROM survey where user_id='$id';";
+    $sql = "SELECT survey_id FROM survey where user_id='$id';";
     $result = mysqli_query($con, $sql);
     $resultaatCheck = mysqli_num_rows($result);
     $resultaat = mysqli_fetch_array($result);
     if($resultaatCheck == 2){
         $survey_id = $_SESSION['survey_id'];
-        $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6) / 6) as test  FROM survey_answers where survey_id='$survey_id';";
+        $sql1 = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6) / 6) as test  FROM survey_answers where survey_id='$survey_id';";
 
-        $result = mysqli_query($con, $sql);
-        $resultaatCheck = mysqli_num_rows($result);
-
-        if ($resultaatCheck > 0){
-            while($row = mysqli_fetch_assoc($result)){
-                echo $row['test'];
-            }
-        }      
+        $result1 = mysqli_query($con, $sql1);
+        $resultaatCheck = mysqli_num_rows($result1);
+echo $resultaat[1];
+            
     }
     else{
         echo "0";
@@ -293,24 +292,20 @@ const data = {
     ?>
     ,
     <?php 
-    $id = $_SESSION['user_id'];
+    $id = $_SESSION['user_id']; // vraag user_id op
     
-    $sql = "SELECT survey_data FROM survey where user_id='$id';";
-    $result = mysqli_query($con, $sql);
-    $resultaatCheck = mysqli_num_rows($result);
-    $resultaat = mysqli_fetch_array($result);
+    $sql = "SELECT survey_id FROM survey where user_id='$id';"; // vraagt survey_id op
+    $result = mysqli_query($con, $sql); // voer de code uit
+    $resultaatCheck = mysqli_num_rows($result); // telt de aantal rows
+    $resultaat = mysqli_fetch_array($result); // maakt een array
     if($resultaatCheck == 2){
-        $survey_id = $_SESSION['survey_id'];
-        $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 ) / 4) as test  FROM survey_answers where survey_id='$survey_id';";
+        
+        $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 ) / 4) as test  FROM survey_answers where survey_id='$resultaat[1]';";
 
         $result = mysqli_query($con, $sql);
         $resultaatCheck = mysqli_num_rows($result);
 
-        if ($resultaatCheck > 0){
-            while($row = mysqli_fetch_assoc($result)){
-                echo $row['test'];
-            }
-        }      
+         
     }
     else{
         echo "0";
@@ -332,12 +327,12 @@ const data = {
 
         $result = mysqli_query($con, $sql);
         $resultaatCheck = mysqli_num_rows($result);
-
-        if ($resultaatCheck > 0){
+if ($resultaatCheck > 0){
             while($row = mysqli_fetch_assoc($result)){
                 echo $row['test'];
             }
         }      
+        
     }
     else{
         echo "0";
@@ -348,6 +343,14 @@ const data = {
     ?>
     , 
     <?php 
+    $id = $_SESSION['user_id'];
+        
+    $sql = "SELECT survey_data FROM survey where user_id='$id';";
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+    $resultaat = mysqli_fetch_array($result);
+
+    if($resultaatCheck == 2){
     $survey_id = $_SESSION['survey_id'];
     $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9) / 9) as test  FROM onderzoeksvaardigheden where survey_id='$survey_id';";
 
@@ -359,11 +362,22 @@ const data = {
             echo $row['test'];
         }
     }      
-    
+    }
+    else{
+        echo "0";
+    }
     
     ?>
     , 
     <?php 
+    $id = $_SESSION['user_id'];
+        
+    $sql = "SELECT survey_data FROM survey where user_id='$id';";
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+    $resultaat = mysqli_fetch_array($result);
+
+if($resultaatCheck == 2){
     $survey_id = $_SESSION['survey_id'];
     $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9 +vraag10) / 10) as test  FROM onderzoekend where survey_id='$survey_id';";
 
@@ -375,10 +389,21 @@ const data = {
             echo $row['test'];
         }
     }      
-    
+}
+else{
+    echo "0";
+}
     
     ?>
     , <?php 
+    $id = $_SESSION['user_id'];
+            
+    $sql = "SELECT survey_data FROM survey where user_id='$id';";
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+    $resultaat = mysqli_fetch_array($result);
+
+    if($resultaatCheck == 2){
     $survey_id = $_SESSION['survey_id'];
     $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9 +vraag10) / 10) as test  FROM toepassen where survey_id='$survey_id';";
 
@@ -390,7 +415,10 @@ const data = {
             echo $row['test'];
         }
     }      
-    
+}
+else{
+    echo "0";
+}
     
     ?>
     ],

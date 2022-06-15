@@ -61,7 +61,7 @@ $sql = "SELECT * FROM users where user_id='$id';";
                     <div class="navbar-nav font-weight-bold mx-auto py-0">
                         <a href="index.php" class="nav-item nav-link active">Hoofdpagina</a> 
                         <a href="progress.php" class="nav-item nav-link ">Progress</a>
-                        <a href="progress.php" class="nav-item nav-link ">DOE DE TEST</a>
+                        <a href="survey_name.php" class="nav-item nav-link ">DOE DE TEST</a>
                         <i class="fa mt-3"><h5>welkom</h5><h5>
                             <?php 
                             $id = $_SESSION['user_id'];
