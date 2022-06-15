@@ -138,7 +138,7 @@ echo '<script type="text/javascript">
   <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 32%" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
     <div class="container-lg bg-primary ">
-    <h1 class="d-flex justify-content-center text-white font">Kennis over het fenomeen onderzoek</h1>
+    <h1  style="font-family: Verdana" class="d-flex justify-content-center text-white font">Kennis over het fenomeen onderzoek</h1>
         <div class="align-items-center px-3">
         
         <table class="table text-white">

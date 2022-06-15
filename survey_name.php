@@ -119,19 +119,19 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 	
 	<div class="container-lg bg-primary w-100 h-75 p-4 ">
 	<div class="text-white">
-	<h2>ONDERZOEKEND VERMOGEN TEST</h2>
-		<p class="h5 text-white">Wat zijn mijn sterke punten? Vergelijk jezelf</p>
-		<p class="h5 text-white">Het duurt 15-20 minuten om deze test te voltooien</p>
-		<h2 text-white >Instructions</h2>
-			<p class="h5 text-white">Hieronder vind u 50 vragen. Geef aan in hoeverre u denkt dat deze uitspraken op u van toepassing zijn. Zorg ervoor dat je beschrijft hoe je bent in plaats van hoe je wilt zijn.</p>
-			<h4>Voor elke stelling zijn er 5 mogelijke antwoorden waaruit u kunt kiezen:</h4>
+	<h2 style="font-family: Verdana">ONDERZOEKEND VERMOGEN TEST</h2>
+		<p style="font-family: Verdana" class="h5 text-white ">Wat zijn mijn sterke punten? Vergelijk jezelf</p>
+		<p  style="font-family: Verdana" class="h5 text-white">Het duurt 15-20 minuten om deze test te voltooien</p>
+		<h2  style="font-family: Verdana" text-white >Instructions</h2>
+			<p class="h5 text-white">Hieronder vindt u 55 vragen. Geef aan in hoeverre u denkt dat deze uitspraken op u van toepassing zijn. Zorg ervoor dat je beschrijft hoe je bent in plaats van hoe je wilt zijn.</p>
+			<h4 style="font-family: Verdana">Voor elke stelling zijn er 5 mogelijke antwoorden waaruit u kunt kiezen:</h4>
 
-			<p class="h5 text-white">- - deze verklaring is helemaal niet van toepassing op mij / nooit van toepassing op mij</p>
-			<p class="h5 text-white">- deze uitspraak is enigszins / soms van toepassing op mij</p>
-			<p class="h5 text-white">-/+ deze uitspraak is redelijk van toepassing op mij / regelmatig van toepassing op mij</p>
-			<p class="h5 text-white">+ deze stelling is zeker van toepassing op mij / vaak van toepassing op mij</p>
-			<p class="h5 text-white">++ deze uitspraak geldt volledig / altijd voor mij</p>
-			<h4>Denk niet te lang na over de uitspraken; er zijn geen goede of foute antwoorden.</h4>
+			<p  style="font-family: Verdana" class="h5 text-white">- - deze verklaring is helemaal niet van toepassing op mij / nooit van toepassing op mij</p>
+			<p  style="font-family: Verdana"class="h5 text-white">- deze uitspraak is enigszins / soms van toepassing op mij</p>
+			<p  style="font-family: Verdana" class="h5 text-white">-/+ deze uitspraak is redelijk van toepassing op mij / regelmatig van toepassing op mij</p>
+			<p style="font-family: Verdana" class="h5 text-white">+ deze stelling is zeker van toepassing op mij / vaak van toepassing op mij</p>
+			<p style="font-family: Verdana" class="h5 text-white">++ deze uitspraak geldt volledig / altijd voor mij</p>
+			<h4 style="font-family: Verdana">Denk niet te lang na over de uitspraken; er zijn geen goede of foute antwoorden.</h4>
 </div>
 <body bgcolor="#32e692">
 	<div align="center">

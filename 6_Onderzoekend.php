@@ -139,7 +139,7 @@ echo '<script type="text/javascript">
     <!-- Header Start -->
     <form action="6_Onderzoekend.php" method="post">
     <div class="progress">
-  <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+  <div style="font-family: Verdana" class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
     <div class="container-lg bg-primary ">
     <h1 class="d-flex justify-content-center text-white font">Onderzoekend handelen</h1>
