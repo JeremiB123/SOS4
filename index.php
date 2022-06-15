@@ -47,18 +47,22 @@ $sql = "SELECT * FROM users where user_id='$id';";
 </head>
 
 <body>
+    
     <!-- Navbar Start -->
-    <div class="container-fluid bg-light position-relative shadow">
-        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
-            <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
+    
+    <div class=" bg-light position-relative shadow">
+        <div class="container-xl">
+        <nav class=" navbar navbar-expand-lg bg-light navbar-light py-0 ">
+            <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 40px;">
                 <span class="text-primary">Onderzoekend vermogen </span>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav font-weight-bold mx-auto py-0">
+            
+            <div class="collapse navbar-collapse " id="navbarCollapse">
+                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarCollapse">
+                    <div class="navbar-nav font-weight-bold ">
                         <a href="index.php" class="nav-item nav-link active">Hoofdpagina</a> 
                         <a href="progress.php" class="nav-item nav-link ">Progress</a>
                         <a href="survey_name.php" class="nav-item nav-link ">DOE DE TEST</a>
@@ -87,13 +91,14 @@ $sql = "SELECT * FROM users where user_id='$id';";
                 </div>
             </div>
         </nav>
+                            </div>
     </div>
     <!-- Navbar End -->
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
-        <div class="row align-items-center px-3">
+    <div class="container bg-primary ">
+        <div class="row align-items-center ">
             <div class="col-lg-6 text-center text-lg-left">
                 <h3 class="text-white">BEKWAAMHEID ONDERZOEKEND VERMOGEN</h3>
                 <p class="text-white">Bekwaamheid onderzoekend vermogen wil zeggen dat de leraar de bekwaamheid toont om praktijkonderzoek te doen én te gebruiken ter verbetering van de eigen beroepspraktijk door de integratie van een onderzoekende houding, kennis over het fenomeen onderzoek, onderzoekend handelen, onderzoeksvaardigheden, het kunnen toepassen van onderzoeksresultaten in de praktijk en kennis over onderzoek in het vakgebied.
@@ -106,6 +111,6 @@ De zes aspecten van onderzoekend vermogen zijn in de praktijk onlosmakelijk met 
         </div>
     </div>
 
-
+                           
 </body>
 </html>

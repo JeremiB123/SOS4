@@ -72,33 +72,23 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <link href="css/FLEX.css" rel="stylesheet">
 </head>
  <!-- Navbar Start -->
- <div class="container-fluid bg-light position-relative shadow">
-        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
-            <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
-                <span class="text-primary">Onderzoekend vermogen </span>
+ <div class=" bg-light position-relative shadow">
+        <div class="container-xl">
+        <nav class=" navbar navbar-expand-lg bg-light navbar-light py-0 ">
+            <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 40px;">
+                <span class="text-primary">Onderzoekend vermogen</span>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav font-weight-bold mx-auto py-0">
+            
+            <div class="collapse navbar-collapse " id="navbarCollapse">
+                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarCollapse">
+                    <div class="navbar-nav font-weight-bold ">
                         <a href="index.php" class="nav-item nav-link">Hoofdpagina</a> 
-                        <a href="progress.php" class="nav-item nav-link">Progress</a>
-                       <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                              Onderzoekend Voortgang
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="houding.php">Onderzoekende houding</a>
-                              <a class="dropdown-item" href="vakleer.php">Onderzoek in het vak(leer)gebied</a>
-                              <a class="dropdown-item" href="fenomeen.php">Fenomeen Onderzoek</a>
-                              <a class="dropdown-item" href="vaardigheden.php">Onderzoeksvaardigheden</a>
-                              <a class="dropdown-item" href="praktijk.php">Toepassen in praktijk</a>
-                              <a class="dropdown-item" href="handelen.php">Onderzoekend handelen</a>
-                            </div>
-                          </li>
-                          <i class="fa mt-3"><h5>welkom</h5><h5>
+                        <a href="progress.php" class="nav-item nav-link ">Progress</a>
+                        <a href="survey_name.php" class="nav-item nav-link active">DOE DE TEST</a>
+                        <i class="fa mt-3"><h5>welkom</h5><h5>
                             <?php 
                             $id = $_SESSION['user_id'];
                             $sql = "SELECT * FROM users where user_id='$id';";
@@ -120,10 +110,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                               <a class="dropdown-item" href="logout.php">logout</a>
                             </div>
                           </li>
- 
                 </div>
             </div>
         </nav>
+                            </div>
     </div>
     <!-- Navbar End -->
 	

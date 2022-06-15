@@ -63,21 +63,23 @@ $user_data = check_login($con);
 
 <body>
      <!-- Navbar Start -->
-     <div class="container-fluid bg-light position-relative shadow">
-        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
-            <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
-                <span class="text-primary">Onderzoekend vermogen </span>
+     <div class=" bg-light position-relative shadow">
+        <div class="container-xl">
+        <nav class=" navbar navbar-expand-lg bg-light navbar-light py-0 ">
+            <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 40px;">
+                <span class="text-primary">Onderzoekend vermogen</span>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav font-weight-bold mx-auto py-0">
-                        <a href="index.php" class="nav-item nav-link ">Hoofdpagina</a> 
-                        <a href="progress.php" class="nav-item nav-link active">Progress</a>
-                        <a href="survey_name.php" class="nav-item nav-link ">DOE DE TEST</a>
-                          <i class="fa mt-3"><h5>welkom</h5><h5>
+            
+            <div class="collapse navbar-collapse " id="navbarCollapse">
+                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarCollapse">
+                    <div class="navbar-nav font-weight-bold ">
+                        <a href="index.php" class="nav-item nav-link">Hoofdpagina</a> 
+                        <a href="progress.php" class="nav-item nav-link active ">Progress</a>
+                        <a href="survey_name.php" class="nav-item nav-link">DOE DE TEST</a>
+                        <i class="fa mt-3"><h5>welkom</h5><h5>
                             <?php 
                             $id = $_SESSION['user_id'];
                             $sql = "SELECT * FROM users where user_id='$id';";
@@ -99,10 +101,10 @@ $user_data = check_login($con);
                               <a class="dropdown-item" href="logout.php">logout</a>
                             </div>
                           </li>
- 
                 </div>
             </div>
         </nav>
+                            </div>
     </div>
     <!-- Navbar End -->
 
