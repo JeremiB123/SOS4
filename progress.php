@@ -5,24 +5,8 @@ include("functions.php");
 
 $user_data = check_login($con);
 
-//$id = $_SESSION['user_id'];
-    
-//$sql = "SELECT survey_data FROM survey where user_id='$id';";
-//$result = mysqli_query($con, $sql);
-//$resultaatCheck = mysqli_num_rows($result);
-//$resultaat = mysqli_fetch_array($result);
-//if($resultaatCheck == 2){
 
-
-//echo $resultaat[];
-//}
-//else {
-    //echo "Jaar 2";
-//}
-    
-
-       
-    
+ 
 
 ?>
 
@@ -66,7 +50,7 @@ $user_data = check_login($con);
      <div class=" bg-light position-relative shadow">
         <div class="container-xl">
         <nav class=" navbar navbar-expand-lg bg-light navbar-light py-0 ">
-            <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 40px;">
+            <a href="#" class="navbar-brand font-weight-bold text-secondary" style="font-size: 40px;">
                 <span class="text-primary">Onderzoekend vermogen</span>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -113,7 +97,7 @@ $user_data = check_login($con);
     <div class="container-xl bg-primary px-0 px-md-5 mb-5">
         <div class="row align-items-center px-3 d-flex justify-content-center">
             <div class="col-lg-6 text-center text-lg-left ">
-                <h1 class="text-white mb-4 mt-5 mt-lg-0">Totale Progress</h1>
+                <h1 class="text-white mb-4 mt-5 mt-lg-0 text-center">Totale Progress</h1>
                 <div>
                 <canvas id="myChart"></canvas>
                 </div>
@@ -154,7 +138,9 @@ const data = {
             echo $row['test'];
         }
     }      
-    
+    else{
+        echo "0";
+    }
     
     ?>
     ,
@@ -171,7 +157,9 @@ const data = {
             echo $row['test'];
         }
     }      
-    
+    else{
+        echo "0";
+    }
     
     ?>
     , 
@@ -187,7 +175,9 @@ const data = {
             echo $row['test'];
         }
     }      
-    
+    else{
+        echo "0";
+    }
     
     ?>
     , 
@@ -203,7 +193,9 @@ const data = {
             echo $row['test'];
         }
     }      
-    
+    else{
+        echo "0";
+    }
     
     ?>
     , 
@@ -219,7 +211,9 @@ const data = {
             echo $row['test'];
         }
     }      
-    
+    else{
+        echo "0";
+    }
     
     ?>
     , <?php 
@@ -234,7 +228,9 @@ const data = {
             echo $row['test'];
         }
     }      
-    
+    else{
+        echo "0";
+    } 
     
     ?>
     ],
@@ -246,192 +242,6 @@ const data = {
     pointBorderColor: '#fff',
     pointHoverBackgroundColor: '#fff',
     pointHoverBorderColor: 'rgb(255, 99, 132)'
-  },
-  // tweee lijn
-
-
-  // twee lijn
-  {
-    label: '<?php 
-    
-    $id = $_SESSION['user_id'];
-    
-    $sql = "SELECT survey_data FROM survey where user_id='$id';";
-    $result = mysqli_query($con, $sql);
-    $resultaatCheck = mysqli_num_rows($result);
-    $resultaat = mysqli_fetch_array($result);
-    if($resultaatCheck == 2){
-    
-    
-    echo $resultaat[1];
-    }
-    else {
-        echo "Jaar 2";
-    }
-    ?>
-    ',
-    
-    data: [<?php 
-    $id = $_SESSION['user_id'];
-    
-    $sql = "SELECT survey_id FROM survey where user_id='$id';";
-    $result = mysqli_query($con, $sql);
-    $resultaatCheck = mysqli_num_rows($result);
-    $resultaat = mysqli_fetch_array($result);
-    if($resultaatCheck == 2){
-        $survey_id = $_SESSION['survey_id'];
-        $sql1 = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6) / 6) as test  FROM survey_answers where survey_id='$survey_id';";
-
-        $result1 = mysqli_query($con, $sql1);
-        $resultaatCheck = mysqli_num_rows($result1);
-echo $resultaat[1];
-            
-    }
-    else{
-        echo "0";
-    }
-    
-    ?>
-    ,
-    <?php 
-    $id = $_SESSION['user_id']; // vraag user_id op
-    
-    $sql = "SELECT survey_id FROM survey where user_id='$id';"; // vraagt survey_id op
-    $result = mysqli_query($con, $sql); // voer de code uit
-    $resultaatCheck = mysqli_num_rows($result); // telt de aantal rows
-    $resultaat = mysqli_fetch_array($result); // maakt een array
-    if($resultaatCheck == 2){
-        
-        $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 ) / 4) as test  FROM survey_answers where survey_id='$resultaat[1]';";
-
-        $result = mysqli_query($con, $sql);
-        $resultaatCheck = mysqli_num_rows($result);
-
-         
-    }
-    else{
-        echo "0";
-    }
-    
-    ?>
-    , 
-    <?php 
-    $id = $_SESSION['user_id'];
-    
-    $sql = "SELECT survey_data FROM survey where user_id='$id';";
-    $result = mysqli_query($con, $sql);
-    $resultaatCheck = mysqli_num_rows($result);
-    $resultaat = mysqli_fetch_array($result);
-
-    if($resultaatCheck == 2){
-        $survey_id = $_SESSION['survey_id'];
-        $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6) / 6) as test  FROM survey_answers where survey_id='$survey_id';";
-
-        $result = mysqli_query($con, $sql);
-        $resultaatCheck = mysqli_num_rows($result);
-if ($resultaatCheck > 0){
-            while($row = mysqli_fetch_assoc($result)){
-                echo $row['test'];
-            }
-        }      
-        
-    }
-    else{
-        echo "0";
-    }
-    
-    
-    
-    ?>
-    , 
-    <?php 
-    $id = $_SESSION['user_id'];
-        
-    $sql = "SELECT survey_data FROM survey where user_id='$id';";
-    $result = mysqli_query($con, $sql);
-    $resultaatCheck = mysqli_num_rows($result);
-    $resultaat = mysqli_fetch_array($result);
-
-    if($resultaatCheck == 2){
-    $survey_id = $_SESSION['survey_id'];
-    $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9) / 9) as test  FROM onderzoeksvaardigheden where survey_id='$survey_id';";
-
-    $result = mysqli_query($con, $sql);
-    $resultaatCheck = mysqli_num_rows($result);
-
-    if ($resultaatCheck > 0){
-        while($row = mysqli_fetch_assoc($result)){
-            echo $row['test'];
-        }
-    }      
-    }
-    else{
-        echo "0";
-    }
-    
-    ?>
-    , 
-    <?php 
-    $id = $_SESSION['user_id'];
-        
-    $sql = "SELECT survey_data FROM survey where user_id='$id';";
-    $result = mysqli_query($con, $sql);
-    $resultaatCheck = mysqli_num_rows($result);
-    $resultaat = mysqli_fetch_array($result);
-
-if($resultaatCheck == 2){
-    $survey_id = $_SESSION['survey_id'];
-    $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9 +vraag10) / 10) as test  FROM onderzoekend where survey_id='$survey_id';";
-
-    $result = mysqli_query($con, $sql);
-    $resultaatCheck = mysqli_num_rows($result);
-
-    if ($resultaatCheck > 0){
-        while($row = mysqli_fetch_assoc($result)){
-            echo $row['test'];
-        }
-    }      
-}
-else{
-    echo "0";
-}
-    
-    ?>
-    , <?php 
-    $id = $_SESSION['user_id'];
-            
-    $sql = "SELECT survey_data FROM survey where user_id='$id';";
-    $result = mysqli_query($con, $sql);
-    $resultaatCheck = mysqli_num_rows($result);
-    $resultaat = mysqli_fetch_array($result);
-
-    if($resultaatCheck == 2){
-    $survey_id = $_SESSION['survey_id'];
-    $sql = "SELECT ((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9 +vraag10) / 10) as test  FROM toepassen where survey_id='$survey_id';";
-
-    $result = mysqli_query($con, $sql);
-    $resultaatCheck = mysqli_num_rows($result);
-
-    if ($resultaatCheck > 0){
-        while($row = mysqli_fetch_assoc($result)){
-            echo $row['test'];
-        }
-    }      
-}
-else{
-    echo "0";
-}
-    
-    ?>
-    ],
-    
-    fill: true,
-    backgroundColor: 'rgba(132, 255, 99, 0.2)',
-    borderColor: 'rgb(132, 255, 99)',
-    pointBackgroundColor: 'rgb(132, 255, 99)',
-    pointBorderColor: '#fff',
-    pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: 'rgb(132, 255, 99)'
   },
   
 
@@ -460,6 +270,383 @@ const config = {
     config
   );
 </script>
+
+<h3 class="text-white text-center">Onderzoekende houding</h3>
+<div class="progress">
+  <div class="progress-bar bg-danger" role="progressbar" style="width: <?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT (((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6) / 6) * 20) as test  FROM survey_answers where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    else{
+        echo "0";
+    }
+    
+    ?>%" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="container my-5">
+  <div class="row">
+    <div class="col">
+    <h1 class="text-white text-center"><?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT (((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6) / 6) * 20) as test  FROM survey_answers where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    else{
+        echo "0";
+    }
+    
+    ?>%</h1>
+    <h3 class="text-white ">Niveau afstudeerfase is 85% nodig</h3>
+    </div>
+    <div class="col">
+        <h5 class ="text-white"> onderbouwing behaalde niveau</h5>
+    <p class ="text-white"><?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT beschrijving  FROM survey_answers where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['beschrijving'];
+        }
+    }      
+    
+    ?> </p>
+    </div>
+  </div>
+</div>
+
+
+<h3 class="text-white text-center">Kennis over onderzoek in het vak(leer)gebied</h3>
+<div class="progress">
+  <div class="progress-bar bg-danger" role="progressbar" style="width: <?php 
+
+$survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT (((vraag1 + vraag2 + vraag3 + vraag4) /4) * 20)  as test  FROM onderzoekvak where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    else{
+        echo "0";
+    }
+
+?>%" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="container my-5">
+  <div class="row">
+    <div class="col">
+    <h1 class="text-white text-center"><?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT (((vraag1 + vraag2 + vraag3 + vraag4) /4) * 20)  as test  FROM onderzoekvak where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    else{
+        echo "0";
+    }
+    
+    
+    ?>%</h1>
+    <h3 class="text-white ">Niveau afstudeerfase is 85% nodig</h3>
+    </div>
+    <div class="col">
+        <h5 class ="text-white"> onderbouwing behaalde niveau</h5>
+    <p class ="text-white"><?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT beschrijving  FROM onderzoekvak where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['beschrijving'];
+        }
+    }      
+    
+    ?> </p>
+    </div>
+  </div>
+</div>
+
+<h3 class="text-white text-center">Kennis over het fenomeen onderzoek</h3>
+<div class="progress">
+  <div class="progress-bar bg-danger" role="progressbar" style="width: <?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT (((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6) / 6) * 20)  as test  FROM fenomeen where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    else{
+        echo "0";
+    }
+    
+    ?>%" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="container my-5">
+  <div class="row">
+    <div class="col">
+    <h1 class="text-white text-center"><?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT (((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6) / 6) * 20)  as test  FROM fenomeen where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    else{
+        echo "0";
+    }
+    
+    ?>%</h1>
+    <h3 class="text-white ">Niveau afstudeerfase is 85% nodig</h3>
+    </div>
+    <div class="col">
+        <h5 class ="text-white"> onderbouwing behaalde niveau</h5>
+    <p class ="text-white"><?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT beschrijving  FROM fenomeen where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['beschrijving'];
+        }
+    }      
+    
+    ?> </p>
+    </div>
+  </div>
+</div>
+<h3 class="text-white text-center">Onderzoeksvaardigheden</h3>
+<div class="progress">
+  <div class="progress-bar bg-danger" role="progressbar" style="width: <?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT (((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9) / 9) * 20) as test  FROM onderzoeksvaardigheden where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    else{
+        echo "0";
+    }
+    
+    ?>%" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="container my-5">
+  <div class="row">
+    <div class="col">
+    <h1 class="text-white text-center"><?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT (((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9) / 9) * 20) as test  FROM onderzoeksvaardigheden where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    else{
+        echo "0";
+    }
+    
+    ?>%</h1>
+    <h3 class="text-white ">Niveau afstudeerfase is 85% nodig</h3>
+    </div>
+    <div class="col">
+        <h5 class ="text-white"> onderbouwing behaalde niveau</h5>
+    <p class ="text-white"><?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT beschrijving  FROM onderzoeksvaardigheden where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['beschrijving'];
+        }
+    }      
+    
+    ?> </p>
+    </div>
+  </div>
+</div>
+<h3 class="text-white text-center">Toepassing onderzoeksresultaten in praktijk</h3>
+<div class="progress">
+  <div class="progress-bar bg-danger" role="progressbar" style="width: <?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT (((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9 +vraag10) / 10) * 20) as test  FROM onderzoekend where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    else{
+        echo "0";
+    }
+    
+    ?>%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="container my-5">
+  <div class="row">
+    <div class="col">
+    <h1 class="text-white text-center"><?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT (((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9 +vraag10) / 10) * 20) as test  FROM onderzoekend where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    else{
+        echo "0";
+    }
+    
+    ?>%</h1>
+    <h3 class="text-white ">Niveau afstudeerfase is 85% nodig</h3>
+    </div>
+    <div class="col">
+        <h5 class ="text-white"> onderbouwing behaalde niveau</h5>
+    <p class ="text-white"><?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT beschrijving  FROM onderzoekend where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['beschrijving'];
+        }
+    }      
+    
+    ?> </p>
+    </div>
+  </div>
+</div>
+<h3 class="text-white text-center">Onderzoekend handelen</h3>
+<div class="progress">
+  <div class="progress-bar bg-danger" role="progressbar" style="width: <?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT (((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9 +vraag10) / 10) * 20) as test  FROM toepassen where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    else{
+        echo "0";
+    } 
+    
+    ?>%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="container my-5">
+  <div class="row">
+    <div class="col">
+    <h1 class="text-white text-center"><?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT (((vraag1 + vraag2 + vraag3 + vraag4 + vraag5 +vraag6 + vraag7 + vraag8 + vraag9 +vraag10) / 10) * 20) as test  FROM toepassen where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['test'];
+        }
+    }      
+    else{
+        echo "0";
+    } 
+    
+    ?>%</h1>
+    <h3 class="text-white ">Niveau afstudeerfase is 85% nodig</h3>
+    </div>
+    <div class="col">
+        <h5 class ="text-white"> onderbouwing behaalde niveau</h5>
+    <p class ="text-white"><?php 
+    $survey_id = $_SESSION['survey_id'];
+    $sql = "SELECT beschrijving  FROM toepassen where survey_id='$survey_id';";
+
+    $result = mysqli_query($con, $sql);
+    $resultaatCheck = mysqli_num_rows($result);
+
+    if ($resultaatCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            echo $row['beschrijving'];
+        }
+    }      
+    
+    ?> </p>
+    </div>
+  </div>
+</div>
+
+<div ><button  class="favorite styled" onClick="window.print()">Print this page
+</button></div>
+
+
 
 </div>
 </body>
