@@ -90,7 +90,7 @@ echo '<script type="text/javascript">
      <div class=" bg-light position-relative shadow">
         <div class="container-xl">
         <nav class=" navbar navbar-expand-lg bg-light navbar-light py-0 ">
-            <a href="index.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 40px;">
+            <a href="#" class="navbar-brand font-weight-bold text-secondary" style="font-size: 40px;">
                 <span class="text-primary">Onderzoekend vermogen </span>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
