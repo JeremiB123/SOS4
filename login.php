@@ -43,58 +43,37 @@ session_start();
 		}
 	}
 
-?>
-
-
+?> 
 <!DOCTYPE html>
-<html>
+<html lang="en" >
 <head>
-	<title>Login</title>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Assistant:400,700" rel="stylesheet"><link rel="stylesheet" href="css/loginsignup.css">
+
 </head>
 <body>
+<!-- partial:index.partial.html -->
+<img src="img/NHL.jpg" width="150" height="100" />
+<section class='login' id='login'>
+  <div class='head'>
+  <h1 class='company'>Onderzoekend vermogen</h1>
+  </div>
+  <div class='form'>
+  
+  <form method="post">
+			<div style="font-size: 20px;margin: 10px;color: white;">Login</div><br>
+			<input class="text" type="text" name="user_name"><br><br>
+			<input class="password" type="password" name="password"><br><br>
 
-	<style type="text/css">
-	
-	#text{
+			<input id="button" class="btn-login" type="submit" value="Login">
+            <a href="signup.php" class='forgot'>Inschrijven?</a>
+            <br><br>
 
-		height: 25px;
-		border-radius: 5px;
-		padding: 4px;
-		border: solid thin #aaa;
-		width: 100%;
-	}
-
-	#button{
-
-		padding: 10px;
-		width: 100px;
-		color: white;
-		background-color: lightblue;
-		border: none;
-	}
-
-	#box{
-
-		background-color: grey;
-		margin: auto;
-		width: 300px;
-		padding: 20px;
-	}
-
-	</style>
-
-	<div id="box">
-		
-		<form method="post">
-			<div style="font-size: 20px;margin: 10px;color: white;">Login</div>
-
-			<input id="text" type="text" name="user_name"><br><br>
-			<input id="text" type="password" name="password"><br><br>
-
-			<input id="button" type="submit" value="Login"><br><br>
-
-			<a href="signup.php">Click to Signup</a><br><br>
 		</form>
-	</div>
+  </div>
+</section>
+<!-- partial -->
+
 </body>
 </html>
